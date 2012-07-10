@@ -18,7 +18,7 @@ module YARG
         return @male_given_names unless @male_given_names.nil?
 
         names = []
-        File.open('data/name_given_male_usa.txt').each_line { |l| names.push l }
+        File.open('data/name_given_male_usa.txt').each_line { |l| names.push l.chomp }
 
         @male_given_names = names
       end
@@ -27,7 +27,7 @@ module YARG
         return @female_given_names unless @female_given_names.nil?
 
         names = []
-        File.open('data/name_given_female_usa.txt').each_line { |l| names.push l }
+        File.open('data/name_given_female_usa.txt').each_line { |l| names.push l.chomp }
 
         @female_given_names = names
       end
