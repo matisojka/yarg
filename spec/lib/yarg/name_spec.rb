@@ -46,6 +46,19 @@ describe YARG::Name do
       10.times { names << YARG::Name.given.male }
 
       names.each { |name| male_data.should include(name) }
+  describe '#surname' do
+    it 'returns a random surname' do
+      surname_data = []
+      File.open('data/surnames_usa.txt').each_line { |l| surname_data  << l.chomp }
+
+      surnames = []
+      100.times { surnames << YARG::Name.surname }
+
+      surnames.select { |surname| !surname.nil? || !surname == '' }.size.should == 100
+
+      surnames.uniq.size.should > 90
+
+      (surnames & surname_data).size.should == 100
     end
   end
 

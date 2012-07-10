@@ -37,6 +37,10 @@ module YARG
         male_given_names.sample
       end
 
+      def surname
+        surnames.sample
+      end
+
       private
 
       def given_names
@@ -59,6 +63,15 @@ module YARG
         File.open('data/name_given_female_usa.txt').each_line { |l| names.push l.chomp }
 
         @female_given_names = names
+      end
+
+      def surnames
+        return @surnames unless @surnames.nil?
+
+        surnames = []
+        File.open('data/surnames_usa.txt').each_line { |l| surnames << l.chomp }
+
+        @surnames = surnames
       end
 
     end
