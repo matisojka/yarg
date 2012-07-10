@@ -23,4 +23,30 @@ describe YARG::Name do
 
   end
 
+  describe '#given#female' do
+
+    it 'returns female names only' do
+      female_data = []
+      File.open('data/name_given_female_usa.txt').each_line { |l| female_data  << l.chomp }
+
+      names = []
+      10.times { names << YARG::Name.given.female }
+
+      names.each { |name| female_data.should include(name) }
+    end
+
+  end
+
+  describe '#given#male' do
+    it 'returns male names only' do
+      male_data = []
+      File.open('data/name_given_male_usa.txt').each_line { |l| male_data  << l.chomp }
+
+      names = []
+      10.times { names << YARG::Name.given.male }
+
+      names.each { |name| male_data.should include(name) }
+    end
+  end
+
 end

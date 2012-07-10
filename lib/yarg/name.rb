@@ -1,12 +1,41 @@
 module YARG
   class Name
 
+    class Given < String
+
+      def initialize(string, name_class)
+        @name_class = name_class
+        super string
+      end
+
+      def female
+        @name_class.given_female
+      end
+
+      def male
+        @name_class.given_male
+      end
+
+      def class
+        String
+      end
+
+    end
+
     class << self
 
       def given
-        given_names.sample
+        Given.new(given_names.sample, self)
       end
       alias first given
+
+      def given_female
+        female_given_names.sample
+      end
+
+      def given_male
+        male_given_names.sample
+      end
 
       private
 
