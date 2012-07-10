@@ -32,7 +32,7 @@ describe YARG::Name do
       names = []
       10.times { names << YARG::Name.given.female }
 
-      names.each { |name| female_data.should include(name) }
+      (names & female_data).size.should == names.uniq.size
     end
 
   end
@@ -45,7 +45,10 @@ describe YARG::Name do
       names = []
       10.times { names << YARG::Name.given.male }
 
-      names.each { |name| male_data.should include(name) }
+      (names & male_data).size.should == names.uniq.size
+    end
+  end
+
   describe '#surname' do
     it 'returns a random surname' do
       surname_data = []
@@ -58,7 +61,7 @@ describe YARG::Name do
 
       surnames.uniq.size.should > 90
 
-      (surnames & surname_data).size.should == 100
+      (surnames & surname_data).size.should == surnames.uniq.size
     end
   end
 
