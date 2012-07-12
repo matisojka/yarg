@@ -45,19 +45,19 @@ module YARG
       private
 
       def given_names
-        DataStore.where(type: :given_name)
+        @given_names ||= DataStore.where(type: :given_name)
       end
 
       def male_given_names
-        DataStore.where(type: :given_name, gender: :male)
+        @male_given_names ||= DataStore.where(type: :given_name, gender: :male)
       end
 
       def female_given_names
-        DataStore.where(type: :given_name, gender: :female)
+        @female_given_names ||= DataStore.where(type: :given_name, gender: :female)
       end
 
       def surnames
-        DataStore.where(type: :surname)
+        @surnames ||= DataStore.where(type: :surname)
       end
 
     end
