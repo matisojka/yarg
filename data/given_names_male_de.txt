@@ -155,7 +155,6 @@ Carlheinz
 Carsten
 Caspar
 Cay
-Cersten
 Chris
 Christfried
 Christhard
@@ -288,7 +287,6 @@ Ehrhard
 Ehrhardt
 Ehrmut
 Eik
-Eike
 Einhard
 Einhardt
 Eitelbert
@@ -395,7 +393,6 @@ Friedhart
 Friedhelm
 Friedhold
 Friedjörg
-Friedl
 Friedlieb
 Friedmar
 Friedmut
@@ -408,7 +405,6 @@ Friedwin
 Frithjof
 Fritz
 Frohmund
-Frohmut
 Frohwald
 Frowin
 Gabriel
@@ -486,8 +482,6 @@ Günther
 Guntmar
 Guntram
 Gustav
-Gustel
-Gustl
 Hadubert
 Hagen
 Haimo
@@ -556,7 +550,6 @@ Heiderich
 Heidfried
 Heiko
 Heilmuth
-Heilwig
 Heimar
 Heimbert
 Heimfrid
@@ -728,7 +721,6 @@ Karsten
 Kasimir
 Kaspar
 Kay
-Kersten
 Kevin
 Kilian
 Klaudius
@@ -1050,11 +1042,9 @@ Sigbert
 Sigenot
 Sigfrid
 Sigfried
-Siggi
 Sighard
 Sighart
 Sighelm
-Sigi
 Sigisbert
 Sigishelm
 Sigismund

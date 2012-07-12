@@ -230,7 +230,6 @@ Catrin
 Cäzilie
 Celia
 Centa
-Cersten
 Charlotte
 Christa
 Christamaria
@@ -339,7 +338,6 @@ Ehrentraud
 Ehrentraut
 Ehrentrud
 Ehrentrudis
-Eike
 Ela
 Elenore
 Eleonore
@@ -456,7 +454,6 @@ Friederun
 Friedgard
 Friedhild
 Friedhilde
-Friedl
 Friedlenchen
 Friedlies
 Friedliese
@@ -467,7 +464,6 @@ Friedrun
 Frigga
 Fritzi
 Frohlinde
-Frohmut
 Frowine
 Gabi
 Gabriela
@@ -544,9 +540,7 @@ Gundula
 Gunhild
 Gunhilde
 Gunthild
-Gustel
 Gusti
-Gustl
 Hadburg
 Hadmut
 Hadmuthe
@@ -589,7 +583,6 @@ Heidi
 Heidrun
 Heidy
 Heike
-Heilwig
 Heimgard
 Heimtraud
 Helena
@@ -805,7 +798,6 @@ Katrein
 Katrin
 Katrina
 Katy
-Kersten
 Kerstin
 Kira
 Kirsten
@@ -1194,10 +1186,8 @@ Sieglinde
 Siegrid
 Siegrun
 Siegtraud
-Siggi
 Sighild
 Sighilde
-Sigi
 Siglind
 Siglinde
 Sigrid
