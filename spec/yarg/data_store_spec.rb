@@ -8,12 +8,15 @@ describe YARG::DataStore do
       {
         given_names_male_us: { type: :given_name, gender: :male, region: :us },
         given_names_female_us: { type: :given_name, gender: :female, region: :us },
-        surnames_us: { type: :surname, region: :us }
+        surnames_us: { type: :surname, region: :us },
+        given_names_male_de: { type: :given_name, gender: :male, region: :de },
+        given_names_female_de: { type: :given_name, gender: :female, region: :de }
       }
     end
 
     before do
       YARG::DataStore.stub(:tagged_data_files).and_return tagged_data_files
+      YARG::DataStore.stub(:fetch_data).and_return []
     end
 
     it 'returns an array of given names' do
@@ -41,6 +44,14 @@ describe YARG::DataStore do
 
       surnames = YARG::DataStore.where(type: :surname)
       surnames.should == expected_surnames
+    end
+
+    it 'return an array of german given names' do
+      expected_names = ['Hans', 'Sven']
+      YARG::DataStore.stub(:fetch_data).and_return expected_names
+
+      names = YARG::DataStore.where(type: :given_name, region: :de)
+      names.should == expected_names
     end
   end
 end

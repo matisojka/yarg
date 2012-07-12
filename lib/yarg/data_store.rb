@@ -47,7 +47,9 @@ module YARG
         {
           given_names_male_us: { type: :given_name, gender: :male, region: :us },
           given_names_female_us: { type: :given_name, gender: :female, region: :us },
-          surnames_us: { type: :surname, region: :us }
+          surnames_us: { type: :surname, region: :us },
+          given_names_male_de: { type: :given_name, gender: :male, region: :de },
+          given_names_female_de: { type: :given_name, gender: :female, region: :de }
         }
       end
 
