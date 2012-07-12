@@ -28,6 +28,7 @@ module YARG
         Given.new(given_names.sample, self)
       end
       alias first given
+      alias given_name given
 
       def given_female
         female_given_names.sample
@@ -44,34 +45,19 @@ module YARG
       private
 
       def given_names
-        @given_names ||= male_given_names + female_given_names
+        DataStore.where(type: :given_name)
       end
 
       def male_given_names
-        return @male_given_names unless @male_given_names.nil?
-
-        names = []
-        File.open('data/name_given_male_usa.txt').each_line { |l| names.push l.chomp }
-
-        @male_given_names = names
+        DataStore.where(type: :given_name, gender: :male)
       end
 
       def female_given_names
-        return @female_given_names unless @female_given_names.nil?
-
-        names = []
-        File.open('data/name_given_female_usa.txt').each_line { |l| names.push l.chomp }
-
-        @female_given_names = names
+        DataStore.where(type: :given_name, gender: :female)
       end
 
       def surnames
-        return @surnames unless @surnames.nil?
-
-        surnames = []
-        File.open('data/surnames_usa.txt').each_line { |l| surnames << l.chomp }
-
-        @surnames = surnames
+        DataStore.where(type: :surname)
       end
 
     end
