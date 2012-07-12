@@ -6,7 +6,7 @@ module YARG
       def where(criteria = {})
         files = get_files(criteria)
 
-        files.map { |file| fetch_data(file) }.flatten
+        files.map { |file| fetch_data(file) }.flatten.uniq
       end
 
       private
