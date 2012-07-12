@@ -4,9 +4,6 @@ module YARG
     class << self
 
       def where(criteria = {})
-        type = criteria[:type]
-
-
         files = get_files(criteria)
 
         files.map { |file| fetch_data(file) }.flatten
