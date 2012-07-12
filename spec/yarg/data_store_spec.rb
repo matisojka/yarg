@@ -14,7 +14,7 @@ describe YARG::DataStore do
       }
     end
 
-    subject(:data_store) { YARG::DataStore }
+    subject(:data_store) { YARG::DataStore.new }
 
     before do
       data_store.stub(:tagged_data_files).and_return tagged_data_files
