@@ -5,8 +5,8 @@ module YARG
       @data_store ||= new.where(criteria)
     end
 
-    def self.magic_query(criteria, unknown_criteria)
-      @data_store ||= new.magic_query(criteria, unknown_criteria)
+    def self.magic_query(criteria, tags)
+      @data_store ||= new.magic_query(criteria, tags)
     end
 
     def where(criteria = {})
@@ -21,12 +21,14 @@ module YARG
       end
     end
 
-    def magic_query(known_criteria, unknown_criteria)
-      Array(unknown_criteria).each do |criterion|
-        known_criteria[criteria_mapping[criterion]] = criterion
+    def magic_query(criteria, tags)
+      criteria = criteria.dup
+
+      Array(tags).each do |criterion|
+        criteria[tags_with_type[criterion]] = criterion
       end
 
-      where(known_criteria)
+      where(criteria)
     end
 
     private
@@ -41,15 +43,6 @@ module YARG
 
     def stored_queries
       @stored_queries ||= {}
-    end
-
-    def criteria_mapping
-      {
-        male:       :gender,
-        female:     :gender,
-        de:         :region,
-        us:         :region
-      }
     end
 
     # This method requires a criteria hash with a key-value relation.
@@ -99,6 +92,14 @@ module YARG
         given_names_male_de: { type: :given_name, gender: :male, region: :de },
         given_names_female_de: { type: :given_name, gender: :female, region: :de }
       }
+    end
+
+    def tags_with_type
+      @tags ||= {}.tap do |tag_hash|
+        tagged_data_files.each do |_, tags|
+          tags.invert.each { |key, value| tag_hash[key] = value }
+        end
+      end
     end
 
   end
