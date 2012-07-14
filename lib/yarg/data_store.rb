@@ -2,11 +2,11 @@ module YARG
   class DataStore
 
     def self.where(criteria = {})
-      @data_store ||= new.where(criteria)
+      (@data_store ||= new).where(criteria)
     end
 
     def self.magic_query(criteria, tags)
-      @data_store ||= new.magic_query(criteria, tags)
+      (@data_store ||= new).magic_query(criteria, tags)
     end
 
     def where(criteria = {})
