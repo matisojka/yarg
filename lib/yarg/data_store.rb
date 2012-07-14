@@ -47,7 +47,8 @@ module YARG
       {
         male:       :gender,
         female:     :gender,
-        de:         :region
+        de:         :region,
+        us:         :region
       }
     end
 
