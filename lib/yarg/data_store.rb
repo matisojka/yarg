@@ -21,12 +21,12 @@ module YARG
       end
     end
 
-    def magic_query(criteria, unknown_criteria)
+    def magic_query(known_criteria, unknown_criteria)
       Array(unknown_criteria).each do |criterion|
-        criteria[criteria_mapping[criterion]] = criterion
+        known_criteria[criteria_mapping[criterion]] = criterion
       end
 
-      where(criteria)
+      where(known_criteria)
     end
 
     private
@@ -54,8 +54,14 @@ module YARG
     # This method requires a criteria hash with a key-value relation.
     # It iterates over tagged_data_files and gets their value hashes,
     # which contain the matching tags. In the next step, it searches for
-    # the next not matching key and as soon as it finds one, it abort the
+    # the next not matching key and as soon as it finds one, it aborts the
     # bucle and set not_matching to the value of the first non matching tag
+    #
+    # Example of criteria:
+    # {
+    #   type: :given_name,
+    #   gender: :female
+    # }
     def get_files(criteria)
       files = []
 
@@ -79,10 +85,11 @@ module YARG
     end
 
     # This is a collection of data files which are used as data source
-    # for some of the random methods.
-    # A file needs to be stored under the /data directory in order to
-    # be recognized by the data store.
-    # The values are a hash of "tags" which define the data characteristics.
+    # for some of the random generation methods.
+    # A file needs to be stored under the /data directory with .txt extension
+    # in order to be recognized by the data store.
+    # The values are in form of a hash of "tags" which defines
+    # the data characteristics.
     def tagged_data_files
       {
         given_names_male_us: { type: :given_name, gender: :male, region: :us },
@@ -92,7 +99,6 @@ module YARG
         given_names_female_de: { type: :given_name, gender: :female, region: :de }
       }
     end
-
 
   end
 end
