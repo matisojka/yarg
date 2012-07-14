@@ -2,10 +2,6 @@ require 'spec_helper'
 
 describe YARG::Name do
 
-  before do
-    YARG::DataStore.class_variable_set :@@stored_queries, nil
-  end
-
   describe '#given' do
 
     it 'returns a random given name' do
