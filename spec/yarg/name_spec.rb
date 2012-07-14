@@ -77,4 +77,15 @@ describe YARG::Name do
      end
    end
 
+   describe '#name' do
+     it 'returns a random full name' do
+       names = []
+       100.times { names << YARG::Name.full }
+
+       names.select { |name| !name.nil? || !name == '' }.size.should == 100
+
+       names.uniq.size.should > 90
+     end
+   end
+
 end
