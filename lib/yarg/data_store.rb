@@ -91,7 +91,8 @@ module YARG
         surnames_us: { type: :surname, region: :us },
         surnames_de: { type: :surname, region: :de },
         given_names_male_de: { type: :given_name, gender: :male, region: :de },
-        given_names_female_de: { type: :given_name, gender: :female, region: :de }
+        given_names_female_de: { type: :given_name, gender: :female, region: :de },
+        phone_area_codes_us: { type: :phone_area_code, region: :us }
       }
     end
 
