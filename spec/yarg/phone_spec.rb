@@ -33,6 +33,10 @@ describe YARG::Phone do
       phones.each { |phone| phone.length.should == 15 }
     end
 
+    it 'throws an error if a non-supported country is requested' do
+      expect { YARG::Phone.phone(:non_supported) }.to raise_error(YARG::NonSupportedCountryError)
+    end
+
   end
 
 end

@@ -7,6 +7,8 @@ module YARG
         country_code = phones.keys.sample if country_code.nil?
         phone_class = phones[country_code]
 
+        raise NonSupportedCountryError if phone_class.nil?
+
         phone_class.phone
       end
 
@@ -69,4 +71,7 @@ module YARG
     end
 
   end
+
+  class NonSupportedCountryError < StandardError; end
+
 end
