@@ -95,6 +95,7 @@ module YARG
         given_names_male_de: { type: :given_name, gender: :male, region: :de },
         given_names_female_de: { type: :given_name, gender: :female, region: :de },
         phone_area_codes_us: { type: :phone_area_code, region: :us },
+        phone_area_codes_de: { type: :phone_area_code, region: :de },
         country_names_en: { type: :country, subtype: :name, language: :EN },
         country_names_de: { type: :country, subtype: :name, language: :DE }
       }

@@ -20,6 +20,17 @@ describe YARG::Phone do
       phones.select { |phone| !phone.nil? || !phone == '' }.size.should == 100
 
       phones.uniq.size.should == 100
+      phones.each { |phone| phone.length.should == 15 }
+    end
+
+    it 'returns a random German number' do
+      phones = []
+      100.times { phones << YARG::Phone.phone(:de) }
+
+      phones.select { |phone| !phone.nil? || !phone == '' }.size.should == 100
+
+      phones.uniq.size.should == 100
+      phones.each { |phone| phone.length.should == 15 }
     end
 
   end
