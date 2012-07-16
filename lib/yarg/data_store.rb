@@ -84,6 +84,8 @@ module YARG
     # in order to be recognized by the data store.
     # The values are in form of a hash of "tags" which defines
     # the data characteristics.
+    # Regions and languages can have the same code, so upcase is used for language
+    # definitions.
     def tagged_data_files
       {
         given_names_male_us: { type: :given_name, gender: :male, region: :us },
@@ -93,7 +95,8 @@ module YARG
         given_names_male_de: { type: :given_name, gender: :male, region: :de },
         given_names_female_de: { type: :given_name, gender: :female, region: :de },
         phone_area_codes_us: { type: :phone_area_code, region: :us },
-        country_names_en: { type: :country, subtype: :name, language: :en }
+        country_names_en: { type: :country, subtype: :name, language: :EN },
+        country_names_de: { type: :country, subtype: :name, language: :DE }
       }
     end
 
