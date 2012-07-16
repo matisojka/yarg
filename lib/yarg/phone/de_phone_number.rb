@@ -1,7 +1,8 @@
 module YARG
   module PhoneFormats
 
-    class GermanPhoneNumber < Phone
+    class GermanPhoneNumber
+      extend PhoneFormatsHelper
 
       class << self
 

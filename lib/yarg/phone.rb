@@ -12,10 +12,6 @@ module YARG
         phone_class.phone
       end
 
-      def random_digit(range)
-        range.to_a.sample
-      end
-
       private
 
       def phones
