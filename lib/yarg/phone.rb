@@ -3,8 +3,10 @@ module YARG
 
     class << self
 
-      def phone
-        phone_class = phones[phones.keys.sample]
+      def phone(country_code = nil)
+        country_code = phones.keys.sample if country_code.nil?
+        phone_class = phones[country_code]
+
         phone_class.phone
       end
 
