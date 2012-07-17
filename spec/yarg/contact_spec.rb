@@ -1,12 +1,12 @@
 require 'spec_helper'
 
-describe YARG::Country do
+describe YARG::Contact do
 
-  describe '#name(:en)' do
+  describe '#country(:en)' do
 
     it 'returns a random English country name' do
       countries = []
-      100.times { countries << YARG::Country.name(:en) }
+      100.times { countries << YARG::Contact.country(:en) }
 
       countries.select { |country| !country.nil? || !country == '' }.size.should == 100
 
@@ -15,7 +15,7 @@ describe YARG::Country do
 
     it 'return a random German country name' do
       countries = []
-      100.times { countries << YARG::Country.name(:de) }
+      100.times { countries << YARG::Contact.country(:de) }
 
       countries.select { |country| !country.nil? || !country == '' }.size.should == 100
 

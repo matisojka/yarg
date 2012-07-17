@@ -1,9 +1,9 @@
 module YARG
-  class Country
+  class Contact
 
     class << self
 
-      def name(language)
+      def country(language)
         language = language.to_s.upcase.to_sym
         DataStore.where(type: :country, subtype: :name, language: language).sample
       end
