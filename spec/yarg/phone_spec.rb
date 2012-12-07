@@ -30,7 +30,6 @@ describe YARG::Phone do
       phones.select { |phone| !phone.nil? || !phone == '' }.size.should == 100
 
       phones.uniq.size.should == 100
-      phones.each { |phone| phone.length.should == 15 }
     end
 
     it 'throws an error if a non-supported country is requested' do

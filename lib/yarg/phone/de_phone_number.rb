@@ -11,7 +11,7 @@ module YARG
           missing_numbers = 10 - area_code.length
           filling = missing_numbers.times.map { random_digit(0..9) }.join
 
-          "+#{international_phone_code} #{area_code} #{filling}"
+          "#{["+#{international_phone_code}", 0].sample} #{area_code} #{filling}"
         end
 
         def international_phone_code
